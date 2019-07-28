@@ -1,7 +1,9 @@
-package com.epam.trainogram.service;
+package com.epam.trainogram.service.comment;
 
 import com.epam.trainogram.domain.Comment;
+import com.epam.trainogram.domain.notification.NewCommentNotification;
 import com.epam.trainogram.domain.Post;
+import com.epam.trainogram.service.notification.NotificationService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

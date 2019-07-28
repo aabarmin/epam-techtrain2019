@@ -1,4 +1,4 @@
-package com.epam.trainogram.service;
+package com.epam.trainogram.domain.notification;
 
 import com.epam.trainogram.domain.Comment;
 import com.epam.trainogram.domain.Post;

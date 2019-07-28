@@ -1,4 +1,4 @@
-package com.epam.trainogram.service;
+package com.epam.trainogram.service.post;
 
 import java.util.List;
 

@@ -10,6 +10,8 @@ import static org.mockito.Mockito.when;
 import com.epam.trainogram.domain.Comment;
 import com.epam.trainogram.domain.Post;
 import com.epam.trainogram.domain.User;
+import com.epam.trainogram.service.post.PostDao;
+import com.epam.trainogram.service.post.PostServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
