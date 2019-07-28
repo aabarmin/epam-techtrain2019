@@ -2,6 +2,7 @@ package com.epam.trainogram.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.epam.trainogram.domain.Comment;
 import com.epam.trainogram.domain.Post;
@@ -22,29 +23,10 @@ public class PostServiceImpl implements PostService {
 
   @Override
   public List<Post> findSuggestions(User user) {
-    List<Post> suggestions = new ArrayList<>();
-
-    List<Post> allPosts = findAll(user);
-    for (Post post : allPosts) {
-      List<Comment> comments = post.getComments();
-      for (Comment comment : comments) {
-        final List<Post> commentAuthorPosts = getCommentAuthorPosts(comment);
-        suggestions.addAll(getTopPosts(commentAuthorPosts, 5));
-      }
-    }
-
-    return suggestions;
-  }
-
-  private List<Post> getCommentAuthorPosts(Comment comment) {
-    final User author = comment.getAuthor();
-    return findAll(author);
-  }
-
-  private List<Post> getTopPosts(List<Post> posts, int number) {
-    if (number > posts.size()) {
-      number = posts.size();
-    }
-    return posts.subList(0, number);
+    return findAll(user).stream()
+        .flatMap(post -> post.getComments().stream())
+        .map(comment -> comment.getAuthor())
+        .flatMap(commentAuthor -> findAll(commentAuthor).stream().limit(5))
+        .collect(Collectors.toList());
   }
 }
