@@ -32,6 +32,11 @@ public class PostServiceImpl implements PostService {
         .collect(Collectors.toList());
   }
 
+  @Override
+  public Post save(Post post) {
+    return postDao.save(post);
+  }
+
   private Stream<Comment> findPostComments(Post post) {
     return post.getComments().stream();
   }

@@ -7,6 +7,10 @@ import com.epam.trainogram.domain.User;
 
 public interface PostService {
   List<Post> findAll();
+
   List<Post> findAll(User user);
+
   List<Post> findSuggestions(User user);
+
+  Post save(Post post);
 }

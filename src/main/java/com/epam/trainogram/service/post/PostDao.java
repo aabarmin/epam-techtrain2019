@@ -7,5 +7,8 @@ import com.epam.trainogram.domain.User;
 
 public interface PostDao {
   List<Post> findAll();
+
   List<Post> findAll(User user);
+
+  Post save(Post post);
 }
