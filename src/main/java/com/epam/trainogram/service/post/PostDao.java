@@ -11,4 +11,6 @@ public interface PostDao {
   List<Post> findAll(User user);
 
   Post save(Post post);
+
+  List<Post> findSponsored(User sponsor);
 }

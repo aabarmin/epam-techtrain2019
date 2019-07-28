@@ -37,6 +37,11 @@ public class PostServiceImpl implements PostService {
     return postDao.save(post);
   }
 
+  @Override
+  public List<Post> findSponsored(User sponsor) {
+    return postDao.findSponsored(sponsor);
+  }
+
   private Stream<Comment> findPostComments(Post post) {
     return post.getComments().stream();
   }
