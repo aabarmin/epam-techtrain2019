@@ -15,7 +15,16 @@ public class ReportServiceImpl implements ReportService {
 
   @Override
   public Report buildReport(User user) {
-    final List<ReportLine> reportLines = postService.findAll(user).stream()
+    List<ReportLine> reportLines = postService.findAll(user).stream()
+        .map(post -> new ReportLine(post, post.getLikesCount()))
+        .collect(Collectors.toList());
+
+    return new Report(reportLines);
+  }
+
+  @Override
+  public Report buildSponsoredReport(User user) {
+    final List<ReportLine> reportLines = postService.findSponsored(user).stream()
         .map(post -> new ReportLine(post, post.getLikesCount()))
         .collect(Collectors.toList());
 

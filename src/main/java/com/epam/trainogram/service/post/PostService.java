@@ -13,4 +13,6 @@ public interface PostService {
   List<Post> findSuggestions(User user);
 
   Post save(Post post);
+
+  List<Post> findSponsored(User sponsor);
 }
