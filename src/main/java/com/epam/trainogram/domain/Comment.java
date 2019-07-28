@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class Comment {
-  private User who;
+  private User author;
   private String text;
-  private LocalDate pubD;
+  private LocalDate publicationDate;
 }

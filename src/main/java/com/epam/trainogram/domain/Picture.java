@@ -6,6 +6,6 @@ import lombok.Data;
 
 @Data
 public class Picture {
-  private byte[] img;
-  private LocalDate crtDate;
+  private byte[] imageContent;
+  private LocalDate creationDate;
 }

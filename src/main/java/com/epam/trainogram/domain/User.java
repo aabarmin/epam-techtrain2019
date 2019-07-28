@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class User {
-  private Picture ava;
+  private Picture avatar;
   private String name;
 }

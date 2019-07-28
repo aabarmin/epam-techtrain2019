@@ -7,9 +7,9 @@ import lombok.Data;
 
 @Data
 public class Post {
-  private Picture pic;
-  private User who;
-  private int likes;
-  private LocalDate pubT;
-  private List<Comment> cmts;
+  private Picture picture;
+  private User author;
+  private int likesCount;
+  private LocalDate publicationDate;
+  private List<Comment> commends;
 }
