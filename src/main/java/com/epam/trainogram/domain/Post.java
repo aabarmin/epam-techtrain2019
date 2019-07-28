@@ -12,4 +12,8 @@ public class Post {
   private int likesCount;
   private LocalDate publicationDate;
   private List<Comment> comments;
+
+  public void addComment(Comment comment) {
+    comments.add(comment);
+  }
 }
