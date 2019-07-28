@@ -28,13 +28,17 @@ public class PostServiceImpl implements PostService {
     for (Post post : allPosts) {
       List<Comment> comments = post.getComments();
       for (Comment comment : comments) {
-        User commentAuthor = comment.getAuthor();
-        List<Post> commenterPosts = findAll(commentAuthor);
-        suggestions.addAll(getTopPosts(commenterPosts, 5));
+        final List<Post> commentAuthorPosts = getCommentAuthorPosts(comment);
+        suggestions.addAll(getTopPosts(commentAuthorPosts, 5));
       }
     }
 
     return suggestions;
+  }
+
+  private List<Post> getCommentAuthorPosts(Comment comment) {
+    final User author = comment.getAuthor();
+    return findAll(author);
   }
 
   private List<Post> getTopPosts(List<Post> posts, int number) {
