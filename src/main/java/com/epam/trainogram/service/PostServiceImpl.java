@@ -7,9 +7,11 @@ import java.util.stream.Stream;
 import com.epam.trainogram.domain.Comment;
 import com.epam.trainogram.domain.Post;
 import com.epam.trainogram.domain.User;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class PostServiceImpl implements PostService {
-  private PostDao postDao;
+  private final PostDao postDao;
 
   @Override
   public List<Post> findAll() {
