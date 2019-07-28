@@ -11,5 +11,5 @@ public class Post {
   private User author;
   private int likesCount;
   private LocalDate publicationDate;
-  private List<Comment> commends;
+  private List<Comment> comments;
 }
