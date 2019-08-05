@@ -24,7 +24,7 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
-  public List<Post> findSuggestions(User user) {
+  public List<Post> findRecommendations(User user) {
     return findAll(user).stream()
         .flatMap(this::findPostComments)
         .map(Comment::getAuthor)

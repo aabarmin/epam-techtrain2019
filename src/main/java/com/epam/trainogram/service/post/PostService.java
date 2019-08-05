@@ -10,7 +10,7 @@ public interface PostService {
 
   List<Post> findAll(User user);
 
-  List<Post> findSuggestions(User user);
+  List<Post> findRecommendations(User user);
 
   Post save(Post post);
 

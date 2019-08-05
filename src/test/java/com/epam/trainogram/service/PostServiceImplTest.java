@@ -3,7 +3,9 @@ package com.epam.trainogram.service;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 
@@ -68,7 +70,7 @@ class PostServiceImplTest {
     doReturn(userPosts).when(postDao).findAll(currentUser);
     when(userPost.getComments()).thenReturn(comments);
 
-    List<Post> suggestions = unitUnderTest.findSuggestions(currentUser);
+    List<Post> suggestions = unitUnderTest.findRecommendations(currentUser);
     assertAll(
         () -> assertNotNull(suggestions),
         () -> assertEquals(1, suggestions.size())
