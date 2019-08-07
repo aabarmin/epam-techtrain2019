@@ -7,7 +7,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class Post implements HasLikeNotificationRecipiends {
+public class Post implements HasLikeNotificationRecipients {
   private Picture picture;
   private User author;
   private int likesCount;
@@ -20,6 +20,6 @@ public class Post implements HasLikeNotificationRecipiends {
 
   @Override
   public List<User> getLikeNotificationRecipients() {
-    return Arrays.asList(author);
+    return Arrays.asList(getAuthor());
   }
 }

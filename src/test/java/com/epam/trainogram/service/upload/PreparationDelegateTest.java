@@ -24,7 +24,7 @@ class PreparationDelegateTest {
   private PreparationServiceImpl preparationService;
 
   @Test
-  void runPreparation(User user, Picture picture) {
+  void runPreparation() {
     List<Filter> filters = Arrays.asList(
         new ClarendonFilter(),
         new MoonFilter()
