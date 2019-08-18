@@ -1,0 +1,16 @@
+version: 2.1
+executors:
+  java_executor:
+    docker:
+      - image: openjdk:8-alpine
+jobs:
+  build_app:
+    executor: java_executor
+    steps:
+      - checkout
+      - run: chmod +x ./gradlew && ./gradlew assemble && ./gradlew check
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - build_app
