@@ -4,7 +4,7 @@ executors:
     docker:
       - image: openjdk:8-alpine
 jobs:
-  build_frontend:
+  build_app:
     executor: java_executor
     steps:
       - checkout
@@ -13,4 +13,4 @@ workflows:
   version: 2
   workflow:
     jobs:
-      - java_executor
+      - build_app
