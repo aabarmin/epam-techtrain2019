@@ -3,6 +3,7 @@ package com.epam.trainogram.service.report;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.epam.trainogram.domain.Post;
 import com.epam.trainogram.domain.Report;
 import com.epam.trainogram.domain.ReportLine;
 import com.epam.trainogram.domain.User;
@@ -15,11 +16,19 @@ public class ReportServiceImpl implements ReportService {
 
   @Override
   public Report buildReport(User user) {
-    List<ReportLine> reportLines = postService.findAll(user).stream()
-        .map(post -> new ReportLine(post, post.getLikesCount()))
-        .collect(Collectors.toList());
+    return isSponsor(user) ?
+        buildReport(postService.findSponsored(user)) :
+        buildReport(postService.findAll(user));
+  }
 
-    return new Report(reportLines);
+  private boolean isSponsor(User user) {
+    return false;
+  }
+
+  private Report buildReport(List<Post> posts) {
+    return new Report(posts.stream()
+        .map(post -> new ReportLine(post, post.getLikesCount()))
+        .collect(Collectors.toList()));
   }
 
   @Override
