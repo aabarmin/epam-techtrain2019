@@ -1,5 +1,7 @@
 # Примеры для доклада SOLIDный чистый код на простых примерах
 
+Доклад для [TechTrain 2019](https://techtrain.ru/2019/talks/3klvhp2crzkiw59o57kgpy/)
+
 ## Книги, упомянутые в докладе
 
 * [Роберт Мартин, Чистый код](https://www.ozon.ru/context/detail/id/5011068/)
