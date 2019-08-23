@@ -4,3 +4,7 @@
 
 * [Роберт Мартин, Чистый код](https://www.ozon.ru/context/detail/id/5011068/)
 * [Роберт Мартин, Гибкая разработка программ на Java и C++](https://www.ozon.ru/context/detail/id/138684801/)
+
+## Упомянутые докла
+
+* [https://www.youtube.com/watch?v=8eH3k4BxV6k](Барух Садогурский — У нас DevOps. Давайте уволим всех тестировщиков)
