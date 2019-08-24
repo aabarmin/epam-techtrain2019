@@ -1,6 +1,6 @@
 # Примеры для доклада "SOLIDный чистый код на простых примерах"
 
-Доклад для [TechTrain 2019](https://techtrain.ru/2019/talks/3klvhp2crzkiw59o57kgpy/)
+Доклад для [TechTrain 2019](https://techtrain.ru/2019/talks/3klvhp2crzkiw59o57kgpy/). Слайды доступны по ссылке [(тут)](https://drive.google.com/file/d/1XCPiPSKFGgJ8C7vH0oPPAJq0NiVaE_-K/view?usp=sharing).
 
 ## Книги, упомянутые в докладе
 
